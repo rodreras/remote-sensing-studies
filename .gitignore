@@ -1,3 +1,6 @@
 land_surface/.cache.sqlite 
 *tiff
+*tif
 *.pyc
+*png
+*JPG
