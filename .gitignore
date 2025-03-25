@@ -4,3 +4,4 @@ land_surface/.cache.sqlite
 *.pyc
 *png
 *JPG
+obia/images/Crops_USA.tif:Zone.Identifier
