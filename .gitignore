@@ -5,3 +5,5 @@ land_surface/.cache.sqlite
 *png
 *JPG
 obia/images/Crops_USA.tif:Zone.Identifier
+spacesense-datacube-challenge/Output/geospatial_test_datacube_processed.nc
+spacesense-datacube-challenge/RawData/*nc
