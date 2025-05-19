@@ -6,8 +6,12 @@ It is covered:
 
 - Image Classification
 
+![image.png](attachment:image.png)
+
 - Feature Extraction
 
 - Image Segmentation
+
+![alt text](image.png)
 
 And finally, it is done a small project where you can find it in `project.ipynb`.
