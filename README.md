@@ -2,6 +2,8 @@
 
 In here, I showcase a couple of my projects, codes and analysis in the domain of Remote Sensing. 
 
+To know more about the projects, visit each folder for further information in the README.md
+
 The tools that I use are mainly: 
 
 - Python
