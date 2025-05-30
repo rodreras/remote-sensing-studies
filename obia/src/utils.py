@@ -21,3 +21,13 @@ def stretch_histogram(band, min_out=0, max_out=255):
     stretched = (band - min_in) * ((max_out - min_out) / (max_in - min_in)) + min_out
     stretched = np.clip(stretched, min_out, max_out)
     return stretched
+
+
+def calculate_iou(ground_truth, predicted):
+    intersection = ground_truth + predicted
+
+    two_vals = np.sum(intersection[intersection==2])
+    non_zero = np.sum(intersection[intersection!=0])
+
+    return (two_vals/non_zero) * 100
+
