@@ -1,47 +1,74 @@
-# Using STAC API To Access Satellite data
+# STAC API Project Setup Guide
 
-In this repository, I use STAC Catallogs with Rasterio, Xarray and RioXarray to access data, analyze them and generate GIF as well. 
+This repository contains tools and notebooks for working with STAC (SpatioTemporal Asset Catalog) API to access and analyze satellite data.
 
+![Time series of agricultural fields](./assets/outputs/campos.gif)
 
-## `agriculture_stac.ipynb`
+## Environment Setup with UV
 
-![alt text](./assets/outputs/campos.gif)
+UV is a modern Python packaging tool that offers faster dependency resolution and installation compared to pip. Here's how to set up your environment:
 
-## `stac.ipynb`
+### 1. Install UV
 
-![alt text](./assets/outputs/image.png)
-
-# Running the repository
-
-1. Install uv if you don't have: 
-
+#### For Linux/macOS:
 ```bash
-#for linux & mac
 curl -LsSf https://astral.sh/uv/install.sh | sh
-
-```
-If you use Windows, [check uv installation guide](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_2)
-
-2. Go to the current working repository
-
-```bash
-cd your/path/to/repo
 ```
 
-3. Sync and Lock dependencies
+#### For Windows:
+Download and install from the [official UV installation guide](https://docs.astral.sh/uv/getting-started/installation/#__tabbed_1_2)
+
+### 2. Create Virtual Environment
 
 ```bash
-uv sync && uv lock
-``` 
-
-4. Open VSCode 
-
-```bash
-code . 
-``` 
-
-The environment should be recognized. If that does not happen, try the code below in terminal, then re-open VSCode. The kernel with the `.venv` should be available.
-
-```bash
-source ./venv/bin/activate
+uv venv
 ```
+
+### 3. Activate Virtual Environment
+
+#### For Linux/macOS:
+```bash
+source .venv/bin/activate
+```
+
+#### For Windows:
+```bash
+.venv\Scripts\activate
+```
+
+### 4. Install Dependencies
+
+```bash
+uv sync
+```
+
+### 5. Lock Dependencies (for reproducibility)
+
+```bash
+uv lock
+```
+
+
+## Troubleshooting
+
+If you encounter any issues with Jupyter kernel recognition in VSCode:
+
+1. Ensure your virtual environment is activated
+2. Install ipykernel:
+   ```bash
+   uv add install ipykernel
+   ```
+
+
+## Project Structure
+
+- `agriculture_stac.ipynb`: Notebook for agricultural analysis using STAC
+- `stac.ipynb`: General STAC API usage examples
+- `utils/`: Utility functions for image processing
+- `assets/`: Contains geojson files and output images
+
+## Notes
+
+- Always ensure your virtual environment is activated before running notebooks
+- Use `uv pip install` instead of regular `pip install` for better dependency management
+- The `uv.lock` file ensures reproducible environments across different machines
